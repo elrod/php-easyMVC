@@ -1,6 +1,7 @@
 <?php
 
-/* La classe db contiene i prototipi delle funzioni che devono essere implementate dai driver dei vari database */
+/* This class contains all the prototypes of the functions that MUST be implemented by *
+ * the specific DBMS drivers														   */
 
 abstract class db{
 	

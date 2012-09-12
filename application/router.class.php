@@ -2,10 +2,10 @@
 
 class router{
 	
-	/* Il registro */
+	/* The registry */
 	private $registry;
 	
-	/* Il percorso dei controller */
+	/* path to the controllers' folder */
 	private $path;
 	
 	private $args = array();
@@ -18,10 +18,10 @@ class router{
 		$this->registry = $registry;	
 	}
 	
-	/* Setto il percorso dei controller */
+	/* Set the controller path */
 	public function set_path($path){
 		
-		/* Controllo che il percorso sia una directory */
+		/* Verify that path is a directory */
 		if(is_dir($path) == false){
 			throw new Exception ('Invalid Controller Path: ' .$path);	
 		}
@@ -29,36 +29,36 @@ class router{
 		$this->path = $path;
 	}
 	
-	/* carico il controller corretto */
+	/* Load correct controller */
 	public function loader(){
 	
-		$this->getController();	// Recupera il controller corretto
+		$this->getController();	// Look for correct controller
 		
 		if(is_readable($this->file) == false){
-			$this->file = $this->path . '/error404.php';	// File non trovato
-			$this->controller = 'error404';				// Carico il controller per file non trovato
+			$this->file = $this->path . '/error404.php';	// File Not Found
+			$this->controller = 'error404';				// Load default File Not Found Controller
 		}
 		
-		include $this->file;		// Carico il controller
+		include $this->file;		// Load the controller
 		
-		/* Creo una nuova istanza della classe controller */
-		$class = $this->controller . 'Controller';		// Notare la C maiuscola
-		$controller = new $class($this->registry);		// Creo un'istanza della classe controller adatta
+		/* Load a new instance of the controller class */
+		$class = $this->controller . 'Controller';		// Note the capital C
+		$controller = new $class($this->registry);		// Crete an instance of the correct controller
 		
-		// Ora guardo se è possibile gestire la action richiesta, cioè se esiste un metodo nel controller che la gestisce
+		// Load if the selected action is callable, otherwise, load the index action by default
 		if(is_callable(array($controller, $this->action)) == false){
 			$action = 'index';	// di default chiamo index come action	
 		}
 		else{
 			$action = $this->action;	
 		}
-		/* Chiamo il metodo di gestione dell'azione */
+		/* Call the correct action handler */
 		$controller->$action();
 	}
 	
-	/* Questo è un metodo privato che esegue il parsing dell'url settando le variabili */
+	/* This is a private method used to parse the URL and load all needed vars */
 	private function getController(){
-		// controllo campo 'rt' in $_GET
+		// check if is set $_GET['rt']
 		$route = (empty($_GET['rt']) ? '' : $_GET['rt']);
 		
 		if(empty($route)){
@@ -68,14 +68,14 @@ class router{
 		}
 		else{
 			
-			$parts = explode('/', $route);	// Suddivido in parti separate da / il contenuto di $route
-			$this->controller = $parts[0];  // La prima parte è il nome del controller
+			$parts = explode('/', $route);	// Explode the url in part separated by the '/' char
+			$this->controller = $parts[0];  // The first part is the controller name
 			if(isset($parts[1])){
-				$this->action = $parts[1];	// Se settata la seconda parte è l'action da eseguire	
+				$this->action = $parts[1];	// The second part is the action name	
 			}
 		}
 		
-		/* Se a questo punto non è stato settato nulla, significa che devo mostrare l'index */
+		/* If at this point nothing is set, it means i have to load the index */
 		if(empty($this->controller)){
 			$this->controller = 'index';	
 		}
@@ -84,7 +84,7 @@ class router{
 			$this->action = 'index';	
 		}
 		
-		/* Setto il Path del controller */
+		/* Setting up controller path */
 		$this->file = $this->path . '/' . $this->controller . 'Controller.php';
 	}
 }

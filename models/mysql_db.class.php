@@ -1,7 +1,7 @@
 <?php
 
-/* la classe mysql_db implementa db per il database mysql *
- * N.B. viene utilizzata l'estensione mysqli			  */
+/* This is the mysql driver for the application		*
+ * Note that this driver uses the mysqli extension	*/
 
 class mysql_db extends db{
 	
@@ -81,7 +81,7 @@ class mysql_db extends db{
 					break;
 				
 				case 'object':
-					// Vai oltre
+					// go on
 					
 				default:
 					$row = $this->result->fetch_object();	

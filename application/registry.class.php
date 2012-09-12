@@ -2,10 +2,10 @@
 
 class registry{
 
-	/* Questo array conterrà tutte le variabili globali */
+	/* This will contain all global vars */
 	private $vars = array();
 
-	/* Getter e setter per le variabili globali */
+	/* Getter and setter for global vars */
 	
 	public function __set($index, $value){
 		$this->vars[$index] = $value;	

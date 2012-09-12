@@ -1,8 +1,7 @@
 <?php
 	
-	/* Un modulo è un componente formato da modello-controller-vista dedicati che è accessibile   *
-	 * e utilizzabile da qualsiasi vista, questi possono essere ad esempio, menu barre di ricerca *
-	 * ecc... che devono essere utilizzati in più parti dell'applicazione						  */
+	/* A module is a separate MVC component that can be used in any view one or more *
+     * times in any part of the application											 */
 	 
 	 class modules{
 	 	
@@ -13,7 +12,7 @@
 	 		$this->registry = $registry;		
 	 	}
 	 	
-	 	/* Carico i moduli presenti nella cartella $path */
+	 	/* Load all modules in $path */
 	 	
 	 	public function load_modules($path){
 	 		if(is_dir($path)){
@@ -30,7 +29,7 @@
 	 			throw new Exception("Invalid modules path");
 	 	}
 	 	
-	 	/* Eseguo il modulo richiesto */
+	 	/* Execute chosen module */
 	 	public function execute($name){
 	 		if(isset($this->loaded_mods[$name])){
 			    include $this->loaded_mods[$name];

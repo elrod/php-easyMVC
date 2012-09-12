@@ -1,6 +1,6 @@
 <?php
 
-/* Questa è una classe astratta che definisce la struttura di un controller */
+/* This defines the base structor of a controller */
 
 abstract class baseController{
 	
@@ -10,7 +10,7 @@ abstract class baseController{
 		$this->registry = $registry;	
 	}
 	
-	/* tutti i controller devono implementare il metodo index */
+	/* all controllers MUST implement the index method */
 	abstract function index();
 		
 } 

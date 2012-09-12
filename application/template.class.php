@@ -2,7 +2,7 @@
 
 class template{
 
-	private $registry;	// Il registro
+	private $registry;	// The registry
 	
 	private $vars = array();
 	
@@ -14,22 +14,22 @@ class template{
 		$this->vars[$index] = $value; 	
 	}
 	
-	/* Questa funzione carica e mostra la vista corretta */
+	/* This function load and display the correct view */
 	
 	public function show($name){
 		$path = __SITE_PATH . '/views/' . $name . '.php';
 		
-		/* se il file non esiste lancia un eccezione  */
+		/* if file does not exists throw an exception  */
 		if(file_exists($path) == false){
 			throw new Exception ('Template not found in: ' . $path);
 		}
 		
-		/* carica tutte le variabili da passare alla vista */
+		/* load all vars to pass to the view */
 		foreach($this->vars as $key => $value){
 			$$key = $value;	
 		}
 		
-		/* ora mostro la vista semplicemente includendola */
+		/* show the view */
 		include ($path);
 	}
 }

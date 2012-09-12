@@ -1,20 +1,19 @@
 <?php
 	
-	/* Questo è il controller principale per l'index del sito */
+	/* This is the main controller for the site index */
 	
 	class indexController extends baseController{
 		
-		/* Implemento il metodo index, obbligatorio per le classi che estendono baseController */
+		/* Implement index controller */
 		public function index(){
 		
-			/* Setto una variabile del template, la utilizzerò poi nella vista */
+			/* Set all template vars, this will be used in the view */
 			$this->registry->template->welcome = 'Il mio Framework MVC!';
 			
-			/* Con questo comando assegno i moduli a una variabile accessibile alla vista *
-			 * dando così la possibilità di eseguirli alla vista stessa					  */
+			/* This instruction allows the view to execute modules */
 			$this->registry->template->modules = $this->registry->modules;
 			
-			/* richiedo la visualizzazione della vista */
+			/* Show the view */
 			$this->registry->template->show('index');
 			
 		}
