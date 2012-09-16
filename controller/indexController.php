@@ -8,7 +8,7 @@
 		public function index(){
 		
 			/* Set all template vars, this will be used in the view */
-			$this->registry->template->welcome = 'Il mio Framework MVC!';
+			$this->registry->template->welcome = 'Welcome to the php-easyMVC Framework!';
 			
 			/* This instruction allows the view to execute modules */
 			$this->registry->template->modules = $this->registry->modules;
