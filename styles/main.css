@@ -7,14 +7,34 @@ body{
 	margin:0 auto;
 }
 
-div#banner{
-	width:100%;
-	height:200px;
+p.box{
+	border:1px dashed black;
 }
 
-div#banner img{
-	padding-right:10px;
+p{
+	margin-top: 10px;
+}
+
+a{
+	font-weight:bold;
+	text-decoration:none;
+	color:orange;	
+}
+
+a:hover{
+	color:#cc6623;
+}
+
+div#footer{
 	margin-top:10px;
-	border: 1px solid #CCC;
-	height:150px;
+	border-top:1px solid #CCC;
+	height:75px;
+}
+
+div#footer p.left{
+	float:left;
+}
+
+div#footer p.right{
+	float:right;
 }
