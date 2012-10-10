@@ -32,7 +32,7 @@
 	 	/* Execute chosen module */
 	 	public function execute($name){
 	 		if(isset($this->loaded_mods[$name])){
-			    include $this->loaded_mods[$name];
+			    include_once $this->loaded_mods[$name];
 			    $controller_name = $name."Controller";
 			    $controller = new $controller_name($this->registry);
 			    $controller->index();
