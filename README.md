@@ -1,7 +1,7 @@
 php-easyMVC
 ==============
 
-Release 0.1 (Alpha)
+Release 0.1.1 (Alpha)
 Warning: "This is an early development release, don't use it on production systems, as your application seafty may
 not be guaranteed" 
 
@@ -48,4 +48,5 @@ Documentation is under development right now, and will soon be available for now
 - To let your views access your modules just use this instruction BEFORE displaying your view: 
   "$this->registry->template->modules = $this->registry->modules;"
 - Remember all Controllers extends baseController and MUST implement at least an index() method, wich is the default action selected by the router.
+- Note that all Modules Controllers extends modulesController (version 0.1.1) and MUST implement the index($args = NULL) method to use paramenters
 - To access your DB just set your DBMS credentials in the config.php, and use the $this->registry->db instance to interact with your DBMS, all the allowed operations are indicated in the models/db.class.php abstract class.
