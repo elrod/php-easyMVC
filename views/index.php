@@ -13,7 +13,12 @@
 	<h1><?php echo $welcome; ?></h1>
 	<br/>
 	<p class="box">
+	<!-- Call a module with no args -->
 	<?php echo $modules->execute('example'); ?>
+	</p>
+	<p class="box">
+	<!-- Call a module with args -->
+	<?php echo $modules->execute('example', "some text"); ?>
 	</p>
 	<p>
 		If you need help using this framework, try Reading the 

@@ -6,6 +6,9 @@
 /* Main controller, all users' controllers MUST extend this */
 include __SITE_PATH . '/application/' . 'baseController.class.php';
 
+/* Modules Controller, all modules' controllers MUST extend this */
+include __SITE_PATH . '/application/' . 'moduleController.class.php';
+
 /* Registry is used to store global variables */
 include __SITE_PATH . '/application/' . 'registry.class.php';
 
