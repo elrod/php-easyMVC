@@ -12,15 +12,4 @@
 			</action>
 		</actions>
 	</controller>
-	<controller key="prova">
-		<actions>
-			<action key="index">
-				<texts>
-					<text key="title">This is the Main Title</text>
-					<text key="subtitle">This is a subtitle</text>
-					<text key="paragraph">This is a whole paragraph, I hope it works proprerly!</text>
-				</texts>
-			</action>
-		</actions>
-	</controller>
 </controllers>
