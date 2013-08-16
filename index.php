@@ -36,8 +36,10 @@
 	/* Autoload all modules */
 	$registry->modules->load_modules(__SITE_PATH . '/modules');
 	
-	/*DEBUG*/
-	//$registry->modules->print_loaded_modules();
+	/* Load translationEngine */
+	if($language != "disabled"){
+		$registry->translationEngine = new translationEngine($language);
+	}
 	
 	/* Load template */
 	$registry->template = new template($registry);

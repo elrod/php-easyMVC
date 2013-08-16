@@ -1,0 +1,14 @@
+==== php-easyMVC Changelog ====
+
+==== version 0.2.0 - 08162013 ====
+
+- MAJOR ENHANCEMENT: XML translation system implemented
+
+==== version 0.1.1 - 03112013 ====
+
+- MINOR ENHANCEMENT: moduleController added, it is now possible to pass args to a module
+- BUGFIXES
+
+==== version: 0.1.0 - 09112012 ====
+
+- RELEASE: first ALPHA php-easyMVC release, base features included.

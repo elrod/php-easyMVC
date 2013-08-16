@@ -21,6 +21,9 @@ include __SITE_PATH . '/application/' . 'template.class.php';
 /* This is used to load all user-made modules */
 include __SITE_PATH . '/application/' . 'modules.class.php';
 
+/* This is used to manage translations */
+include __SITE_PATH . '/application/' . 'translationEngine.class.php';
+
 /* This function autoload all models in the models folder.  *
  * note that all models files name must be called using the *
  * .class.php suffix										*/
