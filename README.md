@@ -1,3 +1,9 @@
+IMPORTANT
+==============
+This project is not maintained anymore. it was a testing ground for all php stuff I was studying during the development period. Anyway, even if there are much better PHP frameworks around, this is still a good starting point if you want to learn how MVC frameworks basically works.
+
+Since this is free-software you are still free to clone this repo and do whatever you want with it!
+
 php-easyMVC
 ==============
 
